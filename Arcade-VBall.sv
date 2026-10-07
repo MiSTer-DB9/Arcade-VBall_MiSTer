@@ -346,10 +346,10 @@ assign USER_OUT = USER_OUT_DRIVE;
 //   A     <- joydb_1[4]   B <- joydb_1[5]   Start1P <- joydb_1[10]
 //   Start2P slot ([5]) left 0 on P1 (VBall reads P2 start from joydb_2[10]).
 wire [15:0] joystick_0 = joydb_1ena ? (OSD_STATUS ? 16'b0 :
-       joydb_1_mapped[9:0])
+       joydb_1_mapped[10:0])
      : joystick_0_USB;
 wire [15:0] joystick_1 = joydb_2ena ? (OSD_STATUS ? 16'b0 :
-       joydb_2_mapped[7:0])
+       joydb_2_mapped[10:0])
      : joydb_1ena ? joystick_0_USB : joystick_1_USB;
 // [MiSTer-DB9-Pro END]
 
